@@ -14,7 +14,7 @@ class QuestionController extends AbstractController
      */
 	public function homepage()
 	{
-		return new Response('Very nice cont man!');
+		return $this->render('question/homepage.html.twig');
 	}
 
     /**
@@ -27,6 +27,8 @@ class QuestionController extends AbstractController
             'Hier nog wat tekst om het te testen',
             'Bananen zijn krom want ze groeien naar het lichts'
         ];
+
+        dump($this);
 
         return $this->render('question/show.html.twig', [
             'question' => ucwords(str_replace('-', ' ', $slug)),
